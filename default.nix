@@ -26,13 +26,15 @@ pkgs.stdenv.mkDerivation rec {
 
   nativeBuildInputs = [
     pkgs.makeWrapper
+    pkgs.ripgrep
   ];
 
   installPhase = ''
     runHook preInstall
 
     mkdir -p $out
-    cp -r letter.html images $out
+    cp -r images $out
+    rg --passthru "images" -r "$out/images" letter.html > $out/letter.html
 
     makeWrapper ${pkgs.pandoc}/bin/pandoc $out/bin/${pname} \
       --prefix PATH : ${prince}/bin \
