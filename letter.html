@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>$title$</title>
+
+    <style lang="css">
+        @page {
+            size: letter portrait;
+            margin: 1.5in;
+            margin-left: 3in;
+
+            @left-top {
+                content: element(letterhead);
+            }
+        }
+
+        body {
+            font-family: "Source Serif 4", prince-no-fallback;
+            font-size: 11.5pt;
+        }
+
+        #signature {
+            width: 2.5in;
+            height: 0.6in;
+            object-fit: cover;
+            margin-left: 0.25in;
+        }
+
+        #letterhead {
+            position: running(letterhead);
+
+            padding: 0 0.5in;
+
+            text-align: right;
+            font-family: "IBM Plex Sans", prince-no-fallback;
+            font-weight: 400;
+            font-size: 9pt;
+
+            color: #443d96;
+        }
+
+        #letterhead p {
+            text-transform: uppercase;
+            letter-spacing: 0.5pt;
+        }
+
+        #letterhead img {
+            height: 1.25in;
+            margin-right: -0.125in;
+            margin-top: -1in;
+        }
+    </style>
+  </head>
+  <body>
+    <div id="letterhead">
+        <img src="images/n-initial.svg" />
+        <p><strong>Max Niederman</strong></p>
+        <p>
+            4033 NE 26th Ave <br />
+            Portland, Oregon
+        </p>
+        <p>907 947 5286</p>
+        <p>max@maxniederman.com</p>
+    </div>
+
+    $body$
+
+    <img src="images/signature.svg" id="signature" />
+  </body>
+</html>
