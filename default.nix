@@ -3,11 +3,11 @@
 let
   prince = pkgs.stdenv.mkDerivation {
     name = "prince";
-    version = "15.2";
+    version = "15.3";
 
     src = pkgs.fetchurl {
-      url = "https://www.princexml.com/download/prince-15.2-linux-generic-x86_64.tar.gz";
-      sha256 = "sha256-EMc/m8GZJNa6DgRZ0X0jJS6oNOitmSz0g6SfrvHpz7o=";
+      url = "https://www.princexml.com/download/prince-15.3-linux-generic-x86_64.tar.gz";
+      sha256 = "sha256-+yiv+7dHFBFkPPJ/+5OjMMG48gmvRS87/dwEAMtISEI=";
     };
 
     nativeBuildInputs = with pkgs; [ autoPatchelfHook ];
